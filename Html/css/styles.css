@@ -1,11 +1,67 @@
-.cus
+.cus-input
 {
-	border: 2px solid white;
 	margin: 10px;
 }
+
+.cus-chessboard{
+	margin: auto;
+
+}
 .icon{
-	width: 35px;
+  width: 35px;
   height: 5px;
   background-color: black;
   margin: 6px 0;
 }
+
+.pos{
+	float:left;
+	display: table-cell;
+	background-color: #fff;
+	width: 80px;
+    height: 80px;
+    text-align:center;
+    vertical-align:middle;
+    font-size:50px;
+    color: black;
+}
+
+.pos_num{
+	float: left;
+    width: 80px;
+    height: 80px;
+    background-color: #999;
+    font-size:50px;
+    text-align:center;
+    display: table-cell;
+    vertical-align:middle;
+    color: black;
+}
+
+.chessboard {
+    width: 770px;
+    height: 770px;
+    margin: auto;
+    border: 25px solid #333;
+}
+.black {
+    float: left;
+    width: 80px;
+    height: 80px;
+    background-color: #999;
+    font-size:50px;
+    text-align:center;
+    display: table-cell;
+    vertical-align:middle;
+}
+.white {
+    float: left;
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    font-size:50px;
+    text-align:center;
+    display: table-cell;
+    vertical-align:middle;
+}
+
