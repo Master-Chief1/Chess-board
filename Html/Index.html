@@ -71,8 +71,24 @@
                     <option>Pawn</option>
                   </select>
               </div>
+            <h2>Select the points</h2><br>
+              <div class="form-group">
+                <label for="usr"><h5>First point:  (eg: A4)</h5></label>
+                  <input type="text" class="form-control" id="fstpt" style="width: 100px">
+                <label for="usr"><h5>Second point: (eg: C6)</h5></label>
+                  <input type="text" class="form-control" id="sndpt" style="width: 100px">
+              </div>
+            <button type="button" class="btn btn-primary">Submit</button>
+
+            <!-- Button visible after clicking submit -->
+            <div id="Run-btn">
+              <button type="button" class="btn btn-primary">RUN</button>
+            </div>
+
+            <div class="result"></div>   <!-- For priting the final path -->
+                
     			</div>
-    	</div>
+        </div>
       <div class="col-md-8">
     			 <div class="chessboard">
               <!-- 1st -->

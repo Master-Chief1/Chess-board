@@ -3,10 +3,19 @@
 	margin: 10px;
 }
 
+.button-custom{
+	color:black;
+}
+
+#Run-btn{
+	margin-top:10px;
+}
+
 .cus-chessboard{
 	margin: auto;
 
 }
+
 .icon{
   width: 35px;
   height: 5px;
@@ -64,4 +73,3 @@
     display: table-cell;
     vertical-align:middle;
 }
-
