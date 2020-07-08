@@ -62,13 +62,13 @@
     				<h2>Select your Chessboard piece:</h2><br>
               <div class="form-group">
                 <label for="sel1"></label>
-                  <select class="form-control" id="sel1">
-                    <option>King</option>
-                    <option>Queen</option>
-                    <option>Knight</option>
-                    <option>Bishop</option>
-                    <option>Rook</option>
-                    <option>Pawn</option>
+                  <select class="form-control" id="chess-piece">
+                    <option value="&#9813">King</option>
+                    <option value="&#9812">Queen</option>
+                    <option value="&#9816">Knight</option>
+                    <option value="&#9815">Bishop</option>
+                    <option value="&#9814">Rook</option>
+                    <option value="&#9817">Pawn</option>
                   </select>
               </div>
             <h2>Select the points</h2><br>
@@ -78,11 +78,15 @@
                 <label for="usr"><h5>Second point: (eg: C6)</h5></label>
                   <input type="text" class="form-control" id="sndpt" style="width: 100px">
               </div>
-            <button type="button" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-primary" id="Sub_btn">Submit</button>
 
             <!-- Button visible after clicking submit -->
-            <div id="Run-btn">
-              <button type="button" class="btn btn-primary">RUN</button>
+            <div class="chess-btn">
+              <button type="button" class="btn btn-primary" id="Run_btn">RUN</button>
+            </div>
+
+            <div class="chess-btn">
+              <button type="button" class="btn btn-danger" id="clear-btn">CLEAR</button>
             </div>
 
             <div class="result"></div>   <!-- For priting the final path -->
@@ -93,93 +97,93 @@
     			 <div class="chessboard">
               <!-- 1st -->
               <div class="pos">8</div>
-              <div class="white A8">&#9820;</div>
-              <div class="black B8">&#9822;</div>
-              <div class="white C8">&#9821;</div>
-              <div class="black D8">&#9819;</div>
-              <div class="white E8">&#9818;</div>
-              <div class="black F8">&#9821;</div>
-              <div class="white G8">&#9822;</div>
-              <div class="black H8">&#9820;</div>
+              <div class="white" id="A8">&#9820;</div>
+              <div class="black" id="B8">&#9822;</div>
+              <div class="white" id="C8">&#9821;</div>
+              <div class="black" id="D8">&#9819;</div>
+              <div class="white" id="E8">&#9818;</div>
+              <div class="black" id="F8">&#9821;</div>
+              <div class="white" id="G8">&#9822;</div>
+              <div class="black" id="H8">&#9820;</div>
               
               <!-- 2nd -->
               <div class="pos">7</div>
-              <div class="black A7">&#9823;</div>
-              <div class="white B7">&#9823;</div>
-              <div class="black C7">&#9823;</div>
-              <div class="white D7">&#9823;</div>
-              <div class="black E7">&#9823;</div>
-              <div class="white F7">&#9823;</div>
-              <div class="black G7">&#9823;</div>
-              <div class="white H7">&#9823;</div>
+              <div class="black" id="A7">&#9823;</div>
+              <div class="white" id="B7">&#9823;</div>
+              <div class="black" id="C7">&#9823;</div>
+              <div class="white" id="D7">&#9823;</div>
+              <div class="black" id="E7">&#9823;</div>
+              <div class="white" id="F7">&#9823;</div>
+              <div class="black" id="G7">&#9823;</div>
+              <div class="white" id="H7">&#9823;</div>
               
               <!-- 3th -->
               <div class="pos">6</div>
-              <div class="white A6"></div>
-              <div class="black B6"></div>
-              <div class="white C6"></div>
-              <div class="black D6"></div>
-              <div class="white E6"></div>
-              <div class="black F6"></div>
-              <div class="white G6"></div>
-              <div class="black H6"></div>
+              <div class="white" id="A6"></div>
+              <div class="black" id="B6"></div>
+              <div class="white" id="C6"></div>
+              <div class="black" id="D6"></div>
+              <div class="white" id="E6"></div>
+              <div class="black" id="F6"></div>
+              <div class="white" id="G6"></div>
+              <div class="black" id="H6"></div>
               
               <!-- 4st -->
               <div class="pos">5</div>
-              <div class="black A5"></div>
-              <div class="white B5"></div>
-              <div class="black C5"></div>
-              <div class="white D5"></div>
-              <div class="black E5"></div>
-              <div class="white F5"></div>
-              <div class="black G5"></div>
-              <div class="white H5"></div>
+              <div class="black" id="A5"></div>
+              <div class="white" id="B5"></div>
+              <div class="black" id="C5"></div>
+              <div class="white" id="D5"></div>
+              <div class="black" id="E5"></div>
+              <div class="white" id="F5"></div>
+              <div class="black" id="G5"></div>
+              <div class="white" id="H5"></div>
               
               <!-- 5th -->
               <div class="pos">4</div>
-              <div class="white A4"></div>
-              <div class="black B4"></div>
-              <div class="white C4"></div>
-              <div class="black D4"></div>
-              <div class="white E4"></div>
-              <div class="black F4"></div>
-              <div class="white G4"></div>
-              <div class="black H4"></div>
+              <div class="white" id="A4"></div>
+              <div class="black" id="B4"></div>
+              <div class="white" id="C4"></div>
+              <div class="black" id="D4"></div>
+              <div class="white" id="E4"></div>
+              <div class="black" id="F4"></div>
+              <div class="white" id="G4"></div>
+              <div class="black" id="H4"></div>
               
               <!-- 6th -->
               <div class="pos">3</div>
-              <div class="black A3"></div>
-              <div class="white B3"></div>
-              <div class="black C3"></div>
-              <div class="white D3"></div>
-              <div class="black E3"></div>
-              <div class="white F3"></div>
-              <div class="black G3"></div>
-              <div class="white H3"></div>
+              <div class="black" id="A3"></div>
+              <div class="white" id="B3"></div>
+              <div class="black" id="C3"></div>
+              <div class="white" id="D3"></div>
+              <div class="black" id="E3"></div>
+              <div class="white" id="F3"></div>
+              <div class="black" id="G3"></div>
+              <div class="white" id="H3"></div>
               
 
               <!-- 7th -->
               <div class="pos">2</div>
-              <div class="white A2">&#9817;</div>
-              <div class="black B2">&#9817;</div>
-              <div class="white C2">&#9817;</div>
-              <div class="black D2">&#9817;</div>
-              <div class="white E2">&#9817;</div>
-              <div class="black F2">&#9817;</div>
-              <div class="white G2">&#9817;</div>
-              <div class="black H2">&#9817;</div>
+              <div class="white" id="A2">&#9817;</div>
+              <div class="black" id="B2">&#9817;</div>
+              <div class="white" id="C2">&#9817;</div>
+              <div class="black" id="D2">&#9817;</div>
+              <div class="white" id="E2">&#9817;</div>
+              <div class="black" id="F2">&#9817;</div>
+              <div class="white" id="G2">&#9817;</div>
+              <div class="black" id="H2">&#9817;</div>
               
 
               <!-- 8th -->
               <div class="pos">1</div>
-              <div class="black A1">&#9814;</div>
-              <div class="white B1">&#9816;</div>
-              <div class="black C1">&#9815;</div>
-              <div class="white D1">&#9813;</div>
-              <div class="black E1">&#9812;</div>
-              <div class="white F1">&#9815;</div>
-              <div class="black G1">&#9816;</div>
-              <div class="white H1">&#9814;</div>
+              <div class="black" id="A1">&#9814;</div>
+              <div class="white" id="B1">&#9816;</div>
+              <div class="black" id="C1">&#9815;</div>
+              <div class="white" id="D1">&#9813;</div>
+              <div class="black" id="E1">&#9812;</div>
+              <div class="white" id="F1">&#9815;</div>
+              <div class="black" id="G1">&#9816;</div>
+              <div class="white" id="H1">&#9814;</div>
               
 
               <!-- 9th col for numbers -->
@@ -197,6 +201,36 @@
           </div>
           </div>
         </div>
+
+
+<script type="text/javascript">
+
+  function clear(){
+    $(".white").html("");
+    $(".black").html("");
+  }
+  
+  $("#Sub_btn").click(function(){
+    clear();
+    //var pie = {King:"&#9813", Queen:"&#9812", Knight:"&#9816", Bishop:"&#9815", Rook:"&#9814", Pawn:"&#9817"};
+    var firstpt = $("#fstpt").val();
+    var piece = document.getElementById("chess-piece");
+    var pie = piece.value;
+    $("#"+firstpt).html(pie);
+  })
+
+  $("#clear-btn").click(function(){
+    clear();
+  })
+
+  $("#Run_btn").click(function(){
+
+    
+    
+  })
+
+</script>
+
 
 </body>
 </html>
