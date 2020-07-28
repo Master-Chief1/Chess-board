@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <title> Chessboard </title>
@@ -205,10 +206,12 @@
 
 <script type="text/javascript">
 
-  var firstpt;
-  var secondpt;
+  var firstpt_low;
+  var secondpt_low;
+  var piece;
   var pie;
   var flag = 0;
+  var chartopts = {"a":1, "b":2, "c":3, "d":4, "e":5, "f":6, "g":7, "h":8};
 
   function clear(){
     /*$(".white").html("");
@@ -219,8 +222,8 @@
   $("#Sub_btn").click(function(){
     clear();
 
-    firstpt = $("#fstpt").val();
-    secondpt = $("#sndpt").val();
+    var firstpt = $("#fstpt").val();
+    var secondpt = $("#sndpt").val();
 
     firstpt_low = firstpt.toLowerCase();
     secondpt_low = secondpt.toLowerCase();
@@ -243,7 +246,7 @@
       flag  = 1;
     }
 
-    var piece = document.getElementById("chess-piece");
+    piece = document.getElementById("chess-piece");
     pie = piece.value;
     $("#"+firstpt).html(pie);
   })
@@ -253,15 +256,28 @@
   })
 
   function compute_pawn(pts1, pts2){
-
-
+    console.log(pts1, pts2);
+    var pawnpts1 = pts1.split("");
+    var pawnpts2 = pts2.split("");
+    console.log(pawnpts1[0], pawnpts2[0]);
+    var x1 = chartopts[pawnpts1[0]];
+    var y1 = parseInt(chartopts[pawnpts1[1]]);
+    var x2 = chartopts[pawnpts2[0]];
+    var y2 = parseInt(chartopts[pawnpts2[1]]); 
+    console.log(x1);
+    console.log(y1);
+    console.log(x2);
+    console.log(y2);
 
 
   }
 
   $("#Run_btn").click(function(){
+     var pts1 = firstpt_low;
+     var pts2 = secondpt_low;
      var steps=[];
-     switch(piece)
+     console.log(pie);
+     switch(pie)
      {
         case "King": steps = compute_king(pts1, pts2);
                              break;
@@ -273,8 +289,8 @@
                               break;
         case "Rook": steps = compute_rook(pts1, pts2);
                               break;
-        case "Pawn": steps = compute_pawn(pts1, pts2);
-                              break;
+        case "♙": console.log("Hello");compute_pawn(pts1, pts2); break;
+        default : console.log("Default");break;
 
      }
     
